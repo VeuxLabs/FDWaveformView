@@ -267,7 +267,7 @@ final public class FDWaveformRenderOperation: Operation {
                         vDSP_Length(samplesPerPixel))
             
             let downSampledDataCG = downSampledData.map { (value: Float) -> CGFloat in
-                let element = CGFloat(value)
+                let element = CGFloat(value-0.3)
                 if element > sampleMax { sampleMax = element }
                 return element
             }
@@ -275,7 +275,7 @@ final public class FDWaveformRenderOperation: Operation {
             // Remove processed samples
             sampleBuffer.removeFirst(samplesToProcess * MemoryLayout<Int16>.size)
             
-            outputSamples += downSampledDataCG
+            outputSamples +=  downSampledDataCG
         }
     }
     

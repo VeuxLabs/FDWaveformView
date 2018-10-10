@@ -117,11 +117,11 @@ open class FDWaveformView: UIView {
     //TODO: MAKE PUBLIC
 
     /// The portion of extra pixels to render left and right of the viewable region
-    private var horizontalBleedTarget = 0.5
+    private var horizontalBleedTarget = 1.5
 
     /// The required portion of extra pixels to render left and right of the viewable region
     /// If this portion is not available then a re-render will be performed
-    private var horizontalBleedAllowed = 0.1 ... 3.0
+    private var horizontalBleedAllowed = 1 ... 3.0
 
     /// The number of horizontal pixels to render per visible pixel on the screen (for antialiasing)
     private var horizontalOverdrawTarget = 3.0
@@ -138,7 +138,7 @@ open class FDWaveformView: UIView {
     private var verticalOverdrawAllowed = 1.0 ... 3.0
 
     /// The "zero" level (in dB)
-    fileprivate let noiseFloor: CGFloat = -50.0
+    fileprivate let noiseFloor: CGFloat = -45.0
 
 
 
